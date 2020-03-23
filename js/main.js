@@ -93,3 +93,26 @@ function createOverlays(data) {
   }, 0);
 
 };
+
+function searchEmployee() {
+  let input = document.getElementById("search");
+  console.log(input.value);
+  const filter = input.value.toUpperCase();
+
+  const items = document.querySelectorAll(".item h1");
+  for (let i = 0; i < items.length; i++) {
+    console.log(items[i].innerHTML);
+  };
+
+  // for (i = 0; i < tr.length; i++) {
+  //   td = tr[i].getElementsByTagName("td")[0];
+  //   if (td) {
+  //     txtValue = td.textContent || td.innerText;
+  //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+  //       tr[i].style.display = "";
+  //     } else {
+  //       tr[i].style.display = "none";
+  //     }
+  //   }
+  // }
+};
