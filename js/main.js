@@ -68,18 +68,18 @@ function createOverlays(data) {
     const html = `
     <div class='oCard'>
       <p class='close' onclick=closeOverlay("overlayCard${index}")>✖</p>
-      <img class='oCard-picture' src='${data.results[index].picture.large}' alt='${data.results[index].name.last}'>
 
       <table>
         <tr>
           <th><label class='backButton' onclick='previousOverlay("overlayCard${index}","overlayCard${previous}")'>←</label></th>
           <th class='oCard-mainText'>
-            <h2 class='oCard-name'>${data.results[index].name.first} ${data.results[index].name.last}</h2>
+            <img class='oCard-picture' src='${data.results[index].picture.large}' alt='${data.results[index].name.last}'>
           </th>
           <th><label class='nextButton' onclick='nextOverlay("overlayCard${index}","overlayCard${next}")'>→</label></th>
         </tr>
       </table>
 
+      <h2 class='oCard-name'>${data.results[index].name.first} ${data.results[index].name.last}</h2>
       <p class='oCard-email'>${data.results[index].email}</p>
       <p class='oCard-city'>${data.results[index].location.city}</p>
 

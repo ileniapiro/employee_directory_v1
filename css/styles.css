@@ -98,13 +98,13 @@ body {
   .backButton {
     color: #a9a9a9cc;
     font-size: 5vw;
-    margin-right: 10vw;
+    margin-right: 15vw;
   }
 
   .nextButton {
     color: #a9a9a9cc;
     font-size: 5vw;
-    margin-left: 10vw;
+    margin-left: 15vw;
   }
 
   .oCard hr {
@@ -397,13 +397,13 @@ body {
   .backButton {
     color: #a9a9a9cc;
     font-size: 2vw;
-    margin-right: 2vw;
+    margin-right: 4vw;
   }
 
   .nextButton {
     color: #a9a9a9cc;
     font-size: 2vw;
-    margin-left: 2vw;
+    margin-left: 4vw;
   }
 
   .oCard hr {
