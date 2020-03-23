@@ -3,12 +3,21 @@ const overlays = document.querySelectorAll('.overlayCard');
 
 //------------------------fetched data from Randomuser------------------------//
 
+function handleFetchErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}
+
 fetch('https://randomuser.me/api/?results=12')
+  .then(handleFetchErrors)
   .then(response => response.json())
   .then(data => {
     createItems(data);
     createOverlays(data);
-  });
+    })
+  .catch(error => openAlert(error));
 
 //-------------html created by js for data fetched from Randomuser------------//
 
@@ -104,20 +113,23 @@ function createOverlays(data) {
 
 //----------------------alert windows for mistake in searchbar----------------//
 
-function openAlert() {
+function openAlert(error) {
   document.getElementById("alert").style.display = "block";
+  document.getElementById("errorMessage").innerHTML = error;
 };
 
 function closeAlert() {
   document.getElementById("alert").style.display = "none";
 };
 
+//-----------------------------user search function---------------------------//
+
 function searchEmployee() {
   let input = document.getElementById("search");
   const filter = input.value.toUpperCase();
 
   if (/^[a-zA-Z0-9- ]*$/.test(filter) == false) {
-    openAlert();
+    openAlert("Inserted a non valid character!");
   }
 
   const itemsH1 = document.querySelectorAll(".item h1");
