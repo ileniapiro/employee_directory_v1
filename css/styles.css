@@ -7,6 +7,20 @@ body {
   background-color: #f0f2f6f0;
 }
 
+.grid-employees {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+  margin: 0 10px 0;
+}
+
+.grid-employees > div {
+  background-color: white;
+  border: 2px solid #a9a9a9cc;
+  border-radius: 10px;
+  padding: 5% 5%;
+}
+
 .overlayCard {
   position: fixed;
   display: none;
@@ -43,18 +57,6 @@ body {
   grid-template-columns: auto auto;
 }
 
-.grid-employees {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto auto auto auto auto;
-  margin: 0 10px 0;
-}
-
-.grid-employees>div {
-  background-color: white;
-  padding: 5% 5%;
-}
-
 .item {
   border: 2px solid #a9a9a9cc;
   border-radius: 10px;
@@ -66,147 +68,112 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-@media screen and (max-width: 768px) {
-  .oCard {
-    display: inherit;
+.oCard {
+  display: inherit;
+  background-color: white;
+  border: 2px solid #a9a9a9cc;
+  border-radius: 10px;
+  line-height: 1;
+  margin: auto 0;
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  left: 25%;
+  margin-left: -15%;
+  top: 25%;
+}
+
+.oCard .close {
+  padding-right: 6%;
+  text-align: right;
+}
+
+.oCard table {
+  margin: 0 auto;
+}
+
+.oCard img {
+  margin-bottom: 5%;
+}
+
+.backButton {
+  color: #a9a9a9cc;
+  font-size: 5vw;
+  margin-right: 15vw;
+}
+
+.nextButton {
+  color: #a9a9a9cc;
+  font-size: 5vw;
+  margin-left: 15vw;
+}
+
+.oCard hr {
+  color: #a9a9a9cc;
+  width: 80%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 4vw;
+  margin: 0;
+}
+
+input[type="text"] {
+  border: 2px solid #a9a9a9cc;
+  border-radius: 10px;
+  color: #a9a9a9cc;
+  font-family: 'Baloo 2', cursive;
+  font-size: 3.5vw;
+  margin-bottom: 20px;
+  min-width: 60%;
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+  width: 22vw;
+}
+
+.cardtext {
+  float: right;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2.4vw;
+  line-height: 0.5;
+  margin: 4% 0 0 1%;
+  min-width: 65%;
+  text-align: left;
+}
+
+p {
+  font-size: 3.0vw;
+}
+
+.companyTitle {
+  grid-area: 1 / 1 / 1 / span 2;
+}
+
+.searchEmployee {
+  grid-area: 2 / 1 / 2 / span 2;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+
+  .grid-employees {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 0 10px 0;
+  }
+
+  .grid-employees > div {
     background-color: white;
     border: 2px solid #a9a9a9cc;
     border-radius: 10px;
-    line-height: 1;
-    margin: auto 0;
-    text-align: center;
-    width: 80%;
-    position: absolute;
-    left: 25%;
-    margin-left: -15%;
-    top: 25%;
+    padding: 5% 5%;
   }
 
-  .oCard .close {
-    padding-right: 6%;
-    text-align: right;
-  }
-
-  .oCard table {
-    margin: 0 auto;
-  }
-
-  .oCard img {
-    margin-bottom: 5%;
-  }
-
-  .backButton {
-    color: #a9a9a9cc;
-    font-size: 5vw;
-    margin-right: 15vw;
-  }
-
-  .nextButton {
-    color: #a9a9a9cc;
-    font-size: 5vw;
-    margin-left: 15vw;
-  }
-
-  .oCard hr {
-    color: #a9a9a9cc;
-    width: 80%;
-  }
-
-  h2 {
-    text-align: center;
-    font-size: 4vw;
-    margin: 0;
-  }
-
-  input[type="text"] {
-    border: 2px solid #a9a9a9cc;
-    border-radius: 10px;
-    color: #a9a9a9cc;
-    font-family: 'Baloo 2', cursive;
-    font-size: 3.5vw;
-    margin-bottom: 20px;
-    min-width: 60%;
-    text-align: center;
-  }
-
-  img {
-    border-radius: 50%;
-    width: 22vw;
-  }
-
-  .cardtext {
-    float: right;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 2.4vw;
-    line-height: 0.5;
-    margin: 4% 0 0 1%;
-    min-width: 65%;
-    text-align: left;
-  }
-
-  p {
-    font-size: 3.0vw;
-  }
-
-  .companyTitle {
-    grid-area: 1 / 1 / 1 / span 2;
-  }
-
-  .searchEmployee {
-    grid-area: 2 / 1 / 2 / span 2;
-    text-align: center;
-  }
-
-  #item1 {
-    grid-area: 1 / 1 / 1 / span 6;
-  }
-
-  #item2 {
-    grid-area: 2 / 1 / 2 / span 6;
-  }
-
-  #item3 {
-    grid-area: 3 / 1 / 3 / span 6;
-  }
-
-  #item4 {
-    grid-area: 4 / 1 / 4 / span 6;
-  }
-
-  #item5 {
-    grid-area: 5 / 1 / 5 / span 6;
-  }
-
-  #item6 {
-    grid-area: 6 / 1 / 6 / span 6;
-  }
-
-  #item7 {
-    grid-area: 7 / 1 / 7 / span 6;
-  }
-
-  #item8 {
-    grid-area: 8 / 1 / 8 / span 6;
-  }
-
-  #item9 {
-    grid-area: 9 / 1 / 9 / span 6;
-  }
-
-  #item10 {
-    grid-area: 10 / 1 / 10 / span 6;
-  }
-
-  #item11 {
-    grid-area: 11 / 1 / 11 / span 6;
-  }
-
-  #item12 {
-    grid-area: 12 / 1 / 12 / span 6;
-  }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
   .oCard {
     display: inherit;
     background-color: white;
@@ -271,13 +238,13 @@ body {
 
   img {
     border-radius: 50%;
-    width: 15vw;
+    width: 12vw;
   }
 
   .cardtext {
     float: right;
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     line-height: 0.5;
     margin: 4% 0 0 1%;
     min-width: 60%;
@@ -285,7 +252,7 @@ body {
   }
 
   p {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   .companyTitle {
@@ -296,57 +263,23 @@ body {
     grid-area: 2 / 1 / 2 / span 2;
     text-align: center;
   }
-
-  #item1 {
-    grid-area: 1 / 1 / 1 / span 3;
-  }
-
-  #item2 {
-    grid-area: 1 / 4 / 1 / span 3;
-  }
-
-  #item3 {
-    grid-area: 2 / 1 / 2 / span 3;
-  }
-
-  #item4 {
-    grid-area: 2 / 4 / 2 / span 3;
-  }
-
-  #item5 {
-    grid-area: 3 / 1 / 3 / span 3;
-  }
-
-  #item6 {
-    grid-area: 3 / 4 / 3 / span 3;
-  }
-
-  #item7 {
-    grid-area: 4 / 1 / 4 / span 3;
-  }
-
-  #item8 {
-    grid-area: 4 / 4 / 4 / span 3;
-  }
-
-  #item9 {
-    grid-area: 5 / 1 / 5 / span 3;
-  }
-
-  #item10 {
-    grid-area: 5 / 4 / 5 / span 3;
-  }
-
-  #item11 {
-    grid-area: 6 / 1 / 6 / span 3;
-  }
-
-  #item12 {
-    grid-area: 6 / 4 / 6 / span 3;
-  }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
+  .grid-employees {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin: 0 10px 0;
+  }
+
+  .grid-employees > div {
+    background-color: white;
+    border: 2px solid #a9a9a9cc;
+    border-radius: 10px;
+    padding: 5% 5%;
+  }
+
   .overlayCard .oCard {
     display: inherit;
     background-color: white;
@@ -456,53 +389,5 @@ body {
     grid-area: 1 / 2 / 1 / 2;
     margin: 10px 10px 0;
     text-align: right;
-  }
-
-  #item1 {
-    grid-area: 1 / 1 / 1 / span 2;
-  }
-
-  #item2 {
-    grid-area: 1 / 3 / 1 / span 2;
-  }
-
-  #item3 {
-    grid-area: 1 / 5 / 1 / span 2;
-  }
-
-  #item4 {
-    grid-area: 2 / 1 / 2 / span 2;
-  }
-
-  #item5 {
-    grid-area: 2 / 3 / 2 / span 2;
-  }
-
-  #item6 {
-    grid-area: 2 / 5 / 2 / span 2;
-  }
-
-  #item7 {
-    grid-area: 3 / 1 / 3 / span 2;
-  }
-
-  #item8 {
-    grid-area: 3 / 3 / 3 / span 2;
-  }
-
-  #item9 {
-    grid-area: 3 / 5 / 3 / span 2;
-  }
-
-  #item10 {
-    grid-area: 4 / 1 / 4 / span 2;
-  }
-
-  #item11 {
-    grid-area: 4 / 3 / 4 / span 2;
-  }
-
-  #item12 {
-    grid-area: 4 / 5 / 4 / span 2;
   }
 }
