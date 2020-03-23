@@ -1,5 +1,6 @@
 const items = document.querySelectorAll('.item');
 const overlays = document.querySelectorAll('.overlayCard');
+console.log(alert);
 
 fetch('https://randomuser.me/api/?results=12')
   .then(response => response.json())
@@ -96,10 +97,22 @@ function createOverlays(data) {
 
 };
 
+function openAlert() {
+  document.getElementById("alert").style.display = "block";
+};
+
+function closeAlert() {
+  document.getElementById("alert").style.display = "none";
+};
+
 function searchEmployee() {
   let input = document.getElementById("search");
   console.log(input.value);
   const filter = input.value.toUpperCase();
+
+  if (/^[a-zA-Z0-9- ]*$/.test(filter) == false) {
+    openAlert();
+  }
 
   const itemsH1 = document.querySelectorAll(".item h1");
   for (let i = 0; i < items.length; i++) {
