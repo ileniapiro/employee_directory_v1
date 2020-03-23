@@ -101,20 +101,13 @@ function searchEmployee() {
   console.log(input.value);
   const filter = input.value.toUpperCase();
 
-  const items = document.querySelectorAll(".item h1");
+  const itemsH1 = document.querySelectorAll(".item h1");
   for (let i = 0; i < items.length; i++) {
-    console.log(items[i].innerHTML);
+    console.log(itemsH1[i].innerHTML);
+    if (itemsH1[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+      items[i].style.display = "";
+    } else {
+      items[i].style.display = "none";
+    }
   };
-
-  // for (i = 0; i < tr.length; i++) {
-  //   td = tr[i].getElementsByTagName("td")[0];
-  //   if (td) {
-  //     txtValue = td.textContent || td.innerText;
-  //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-  //       tr[i].style.display = "";
-  //     } else {
-  //       tr[i].style.display = "none";
-  //     }
-  //   }
-  // }
 };
