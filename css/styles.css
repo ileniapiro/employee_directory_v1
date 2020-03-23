@@ -7,6 +7,13 @@ body {
   background-color: #f0f2f6f0;
 }
 
+h2 {
+  text-align: center;
+  font-size: 4vw;
+  margin: 0;
+}
+
+/*-----------------------searchbar alert message------------------------------*/
 .alertWrongChar {
   position: fixed;
   display: none;
@@ -22,6 +29,34 @@ body {
   text-align: center;
 }
 
+/*-------------------------------searchbar------------------------------------*/
+.grid-search {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto;
+}
+
+input[type="text"] {
+  border: 2px solid #a9a9a9cc;
+  border-radius: 10px;
+  color: #a9a9a9cc;
+  font-family: 'Baloo 2', cursive;
+  font-size: 3.5vw;
+  margin-bottom: 20px;
+  min-width: 60%;
+  text-align: center;
+}
+
+.companyTitle {
+  grid-area: 1 / 1 / 1 / span 2;
+}
+
+.searchEmployee {
+  grid-area: 2 / 1 / 2 / span 2;
+  text-align: center;
+}
+
+/*---------------------------card containers----------------------------------*/
 .grid-employees {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -29,13 +64,34 @@ body {
   margin: 0 10px 0;
 }
 
-.grid-employees > div {
+.grid-employees>div {
   background-color: white;
   border: 2px solid #a9a9a9cc;
   border-radius: 10px;
   padding: 5% 5%;
 }
 
+.item {
+  border: 2px solid #a9a9a9cc;
+  border-radius: 10px;
+}
+
+.item:hover {
+  border: 2px solid #a9a9a9cc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {
+  border-radius: 50%;
+  width: 22vw;
+}
+
+p {
+  font-size: 3.0vw;
+}
+
+/*----------------------------modal windows-----------------------------------*/
 .overlayCard {
   position: fixed;
   display: none;
@@ -64,23 +120,6 @@ body {
   z-index: 2;
   cursor: pointer;
   text-align: center;
-}
-
-.grid-search {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: auto auto;
-}
-
-.item {
-  border: 2px solid #a9a9a9cc;
-  border-radius: 10px;
-}
-
-.item:hover {
-  border: 2px solid #a9a9a9cc;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .oCard {
@@ -128,28 +167,6 @@ body {
   width: 80%;
 }
 
-h2 {
-  text-align: center;
-  font-size: 4vw;
-  margin: 0;
-}
-
-input[type="text"] {
-  border: 2px solid #a9a9a9cc;
-  border-radius: 10px;
-  color: #a9a9a9cc;
-  font-family: 'Baloo 2', cursive;
-  font-size: 3.5vw;
-  margin-bottom: 20px;
-  min-width: 60%;
-  text-align: center;
-}
-
-img {
-  border-radius: 50%;
-  width: 22vw;
-}
-
 .cardtext {
   float: right;
   font-family: 'Open Sans', sans-serif;
@@ -160,21 +177,35 @@ img {
   text-align: left;
 }
 
-p {
-  font-size: 3.0vw;
-}
-
-.companyTitle {
-  grid-area: 1 / 1 / 1 / span 2;
-}
-
-.searchEmployee {
-  grid-area: 2 / 1 / 2 / span 2;
-  text-align: center;
-}
-
 @media screen and (min-width: 768px) {
+  h2 {
+    text-align: center;
+    font-size: 4vw;
+    margin: 0;
+  }
 
+  /*-------------------------------searchbar------------------------------------*/
+  input[type="text"] {
+    border: 2px solid #a9a9a9cc;
+    border-radius: 10px;
+    color: #a9a9a9cc;
+    font-family: 'Baloo 2', cursive;
+    font-size: 3.5vw;
+    margin-bottom: 20px;
+    min-width: 60%;
+    text-align: center;
+  }
+
+  .companyTitle {
+    grid-area: 1 / 1 / 1 / span 2;
+  }
+
+  .searchEmployee {
+    grid-area: 2 / 1 / 2 / span 2;
+    text-align: center;
+  }
+
+  /*---------------------------card containers----------------------------------*/
   .grid-employees {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -182,13 +213,23 @@ p {
     margin: 0 10px 0;
   }
 
-  .grid-employees > div {
+  .grid-employees>div {
     background-color: white;
     border: 2px solid #a9a9a9cc;
     border-radius: 10px;
     padding: 5% 5%;
   }
 
+  img {
+    border-radius: 50%;
+    width: 12vw;
+  }
+
+  p {
+    font-size: 1.5vw;
+  }
+
+  /*----------------------------modal windows-----------------------------------*/
   .oCard {
     display: inherit;
     background-color: white;
@@ -234,28 +275,6 @@ p {
     width: 80%;
   }
 
-  h2 {
-    text-align: center;
-    font-size: 4vw;
-    margin: 0;
-  }
-
-  input[type="text"] {
-    border: 2px solid #a9a9a9cc;
-    border-radius: 10px;
-    color: #a9a9a9cc;
-    font-family: 'Baloo 2', cursive;
-    font-size: 3.5vw;
-    margin-bottom: 20px;
-    min-width: 60%;
-    text-align: center;
-  }
-
-  img {
-    border-radius: 50%;
-    width: 12vw;
-  }
-
   .cardtext {
     float: right;
     font-family: 'Open Sans', sans-serif;
@@ -265,22 +284,39 @@ p {
     min-width: 60%;
     text-align: left;
   }
-
-  p {
-    font-size: 1.5vw;
-  }
-
-  .companyTitle {
-    grid-area: 1 / 1 / 1 / span 2;
-  }
-
-  .searchEmployee {
-    grid-area: 2 / 1 / 2 / span 2;
-    text-align: center;
-  }
 }
 
 @media screen and (min-width: 1024px) {
+  h2 {
+    text-align: left;
+    font-size: 1.5vw;
+    margin: 0;
+  }
+
+  /*-------------------------------searchbar------------------------------------*/
+  input[type="text"] {
+    border: 2px solid #a9a9a9cc;
+    border-radius: 10px;
+    color: #a9a9a9cc;
+    font-family: 'Baloo 2', cursive;
+    font-size: 1vw;
+    margin-bottom: 20px;
+    min-width: 60%;
+    text-align: center;
+  }
+
+  .companyTitle {
+    grid-area: 1 / 1 / 1 / 1;
+    margin: 10px 10px 0;
+  }
+
+  .searchEmployee {
+    grid-area: 1 / 2 / 1 / 2;
+    margin: 10px 10px 0;
+    text-align: right;
+  }
+
+  /*---------------------------card containers----------------------------------*/
   .grid-employees {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -288,13 +324,23 @@ p {
     margin: 0 10px 0;
   }
 
-  .grid-employees > div {
+  .grid-employees>div {
     background-color: white;
     border: 2px solid #a9a9a9cc;
     border-radius: 10px;
     padding: 5% 5%;
   }
 
+  img {
+    border-radius: 50%;
+    width: 6vw;
+  }
+
+  p {
+    font-size: 1vw;
+  }
+
+  /*----------------------------modal windows-----------------------------------*/
   .overlayCard .oCard {
     display: inherit;
     background-color: white;
@@ -359,28 +405,6 @@ p {
     width: 80%;
   }
 
-  h2 {
-    text-align: left;
-    font-size: 1.5vw;
-    margin: 0;
-  }
-
-  input[type="text"] {
-    border: 2px solid #a9a9a9cc;
-    border-radius: 10px;
-    color: #a9a9a9cc;
-    font-family: 'Baloo 2', cursive;
-    font-size: 1vw;
-    margin-bottom: 20px;
-    min-width: 60%;
-    text-align: center;
-  }
-
-  img {
-    border-radius: 50%;
-    width: 6vw;
-  }
-
   .cardtext {
     float: right;
     font-family: 'Open Sans', sans-serif;
@@ -389,20 +413,5 @@ p {
     margin: 2% 0 0 1%;
     min-width: 70%;
     text-align: left;
-  }
-
-  p {
-    font-size: 1vw;
-  }
-
-  .companyTitle {
-    grid-area: 1 / 1 / 1 / 1;
-    margin: 10px 10px 0;
-  }
-
-  .searchEmployee {
-    grid-area: 1 / 2 / 1 / 2;
-    margin: 10px 10px 0;
-    text-align: right;
   }
 }

@@ -1,6 +1,7 @@
 const items = document.querySelectorAll('.item');
 const overlays = document.querySelectorAll('.overlayCard');
-console.log(alert);
+
+//------------------------fetched data from Randomuser------------------------//
 
 fetch('https://randomuser.me/api/?results=12')
   .then(response => response.json())
@@ -8,6 +9,8 @@ fetch('https://randomuser.me/api/?results=12')
     createItems(data);
     createOverlays(data);
   });
+
+//-------------html created by js for data fetched from Randomuser------------//
 
 function createItems(data) {
   items.forEach((item, index) => {
@@ -22,6 +25,8 @@ function createItems(data) {
     item.innerHTML = html;
   }, 0);
 };
+
+//-------------------function that create the modal windows------------------//
 
 function openOverlay(overlay) {
   document.getElementById(overlay).style.display = "block";
@@ -97,6 +102,8 @@ function createOverlays(data) {
 
 };
 
+//----------------------alert windows for mistake in searchbar----------------//
+
 function openAlert() {
   document.getElementById("alert").style.display = "block";
 };
@@ -107,7 +114,6 @@ function closeAlert() {
 
 function searchEmployee() {
   let input = document.getElementById("search");
-  console.log(input.value);
   const filter = input.value.toUpperCase();
 
   if (/^[a-zA-Z0-9- ]*$/.test(filter) == false) {
@@ -116,7 +122,6 @@ function searchEmployee() {
 
   const itemsH1 = document.querySelectorAll(".item h1");
   for (let i = 0; i < items.length; i++) {
-    console.log(itemsH1[i].innerHTML);
     if (itemsH1[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
       items[i].style.display = "";
     } else {
