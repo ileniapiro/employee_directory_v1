@@ -24,7 +24,7 @@ fetch('https://randomuser.me/api/?results=12')
 function createItems(data) {
   items.forEach((item, index) => {
     const html = `
-    <img src='${data.results[index].picture.large}' alt='${data.results[index].name.last}'>
+    <img src='${data.results[index].picture.large}' alt='Picture of ${data.results[index].name.first} ${data.results[index].name.last}'>
     <div class="cardtext">
       <h1>${data.results[index].name.first} ${data.results[index].name.last}</h1>
       <p class="email">${data.results[index].email}</p>
@@ -72,6 +72,7 @@ function createOverlays(data) {
     } else {
       next = index + 1;
     };
+
     if (index === 0) {
       previous = 11;
     } else {
